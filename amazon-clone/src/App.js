@@ -1,12 +1,23 @@
 import './App.css';
+import Header from "./Header";
+import Home from "./Home";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Checkout from './Checkout';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to Project Vendo.
-        
-      </h1>
-    </div>
+    //BEM
+    <Router>
+      <div className="app">
+      <Header />
+        <Routes>
+          <Route path="/checkout" element={<Checkout />} />
+          {/*<Route path = "/login" element={<Login />} />*/}
+          <Route path = "/" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
+
   );
 }
 
